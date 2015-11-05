@@ -1,0 +1,14 @@
+
+#java class files
+*.class
+
+
+#generated files
+bin/
+
+
+#eclipse project files
+.classpath
+.project
+
+ 
