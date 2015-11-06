@@ -1,3 +1,5 @@
+package chess;
+
 import junit.framework.TestCase;
 
 /**
@@ -11,12 +13,17 @@ import junit.framework.TestCase;
  * 
  */
 public class PawnTest extends TestCase {
+	Pawn pawn1;
+	Pawn pawn2;
+
+	@Override
+	protected void setUp() throws Exception {
+		pawn1 = new Pawn(Pawn.COLOR_BLACK);
+		pawn2 = new Pawn(Pawn.COLOR_WHITE);
+	}
 
 	public void testCreate() throws Exception {
-		Pawn pawn1 = new Pawn(Pawn.COLOR_BLACK);
 		assertEquals(Pawn.COLOR_BLACK, pawn1.getColor());
-
-		Pawn pawn2 = new Pawn(Pawn.COLOR_WHITE);
 		assertEquals(Pawn.COLOR_WHITE, pawn2.getColor());
 	}
 
@@ -25,4 +32,8 @@ public class PawnTest extends TestCase {
 		assertEquals(Pawn.COLOR_WHITE, pawn.getColor());
 	}
 
+	public void testPresentation() throws Exception {
+		assertEquals("p", pawn2.presentation());
+		assertEquals("P", pawn1.presentation());
+	}
 }

@@ -1,3 +1,5 @@
+package chess;
+
 /**
  * @author : Chen
  * @fileName : .Pawn.java
@@ -25,6 +27,10 @@ public class Pawn {
 
 	public String getColor() {
 		return color == null ? "white" : color;
+	}
+
+	public String presentation() {
+		return color == COLOR_BLACK ? "P" : "p";
 	}
 
 }
