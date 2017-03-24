@@ -16,4 +16,4 @@ include 'api'
 include 'services:webservice'
 */
 
-rootProject.name = 'agileTrain'
+rootProject.name = 'tdd-playground'
