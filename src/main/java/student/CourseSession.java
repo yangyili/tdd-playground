@@ -35,4 +35,8 @@ public class CourseSession {
     public void enroll(Student student) {
         students.add(student);
     }
+
+    public List getAllStudents() {
+        return students;
+    }
 }
