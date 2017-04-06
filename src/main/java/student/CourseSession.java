@@ -11,12 +11,12 @@ public class CourseSession {
     private String department;
     private String number;
 
-    private List students;
+    private List<Student> students;
 
     public CourseSession(String department, String number) {
         this.department = department;
         this.number = number;
-        students = new ArrayList();
+        students = new ArrayList<Student>();
 
     }
 
@@ -36,7 +36,7 @@ public class CourseSession {
         students.add(student);
     }
 
-    public List getAllStudents() {
+    public List<Student> getAllStudents() {
         return students;
     }
 }
