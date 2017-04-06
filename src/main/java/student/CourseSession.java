@@ -1,5 +1,7 @@
 package student;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.SimpleTimeZone;
 
 /**
@@ -9,9 +11,12 @@ public class CourseSession {
     private String department;
     private String number;
 
+    private List students;
+
     public CourseSession(String department, String number) {
         this.department = department;
         this.number = number;
+        students = new ArrayList();
 
     }
 
@@ -24,6 +29,10 @@ public class CourseSession {
     }
 
     public int getNumberOfStudents() {
-        return 0;
+        return students.size();
+    }
+
+    public void enroll(Student student) {
+        students.add(student);
     }
 }
