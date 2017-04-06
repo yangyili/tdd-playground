@@ -1,4 +1,7 @@
+package student;
+
 import org.junit.Test;
+import student.Student;
 
 import static org.junit.Assert.*;
 
@@ -7,7 +10,7 @@ import static org.junit.Assert.*;
  */
 public class StudentTest {
     @Test
-    public void first() throws Exception {
+    public void test_create() throws Exception {
         final String firstStudentName = "Afaren Chen";
         Student student = new Student(firstStudentName);
         assertEquals(firstStudentName, student.getName());

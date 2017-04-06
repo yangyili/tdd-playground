@@ -1,3 +1,5 @@
+package student;
+
 /**
  * Created by afaren on 3/24/17.
  */
