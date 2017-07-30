@@ -6,9 +6,9 @@ import java.util.*;
  * Created by afaren on 4/6/17.
  */
 public class CourseSession {
-    public static final String ROSTER_REPORT_HEADER = "header";
-    public static final String ROSTER_REPORT_FOOTER = "footer";
     public static final String NEWLINE = System.getProperty("line.separator");
+    public static final String ROSTER_REPORT_HEADER = "Student" + NEWLINE + "----" + NEWLINE;
+    public static final String ROSTER_REPORT_FOOTER = NEWLINE + "# Students = ";
     private Date startDate;
     private String department;
     private String number;
