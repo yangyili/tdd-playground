@@ -17,12 +17,12 @@ public class RosterReporter {
     }
 
     public String getReport() {
-        StringBuilder builder = new StringBuilder();
-        builder.append(ROSTER_REPORT_HEADER);
+        StringBuilder report = new StringBuilder();
+        report.append(ROSTER_REPORT_HEADER);
         List<Student> students = session.getAllStudents();
-        students.forEach(student -> builder.append(student.getName()).append(NEWLINE));
-        builder.append(ROSTER_REPORT_FOOTER).append(students.size()).append(NEWLINE);
-        return builder.toString();
+        students.forEach(student -> report.append(student.getName()).append(NEWLINE));
+        report.append(ROSTER_REPORT_FOOTER).append(students.size()).append(NEWLINE);
+        return report.toString();
 
     }
 }
