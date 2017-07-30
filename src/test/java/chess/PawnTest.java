@@ -27,10 +27,10 @@ public class PawnTest {
 
     @Test
     public void test_print_representation() throws Exception {
-        Pawn black = new Pawn(BLACK, BLACK_REPRESENTATION);
-        Pawn white = new Pawn(WHITE, WHITE_REPRESENTATION);
-        assertEquals(black.representation(), BLACK_REPRESENTATION);
-        assertEquals(white.representation(), WHITE_REPRESENTATION);
+        Pawn black = new Pawn(BLACK, Representation.BLACK);
+        Pawn white = new Pawn(WHITE, Representation.WHITE);
+        assertEquals(black.representation(), Representation.BLACK);
+        assertEquals(white.representation(), Representation.WHITE);
 
     }
 }

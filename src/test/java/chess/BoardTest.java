@@ -3,6 +3,10 @@ package chess;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
+import java.util.stream.Collectors;
+
 import static org.junit.Assert.*;
 
 /**
@@ -17,24 +21,23 @@ public class BoardTest {
     }
 
     @Test
-    public void test_create() throws Exception {
-        assertEquals(0, board.numberOfPawns());
+    public void test_initialization() throws Exception {
+        assertEquals(16, board.numberOfPawns());
+
+        Pawn[] secondRow = new Pawn[8];
+        for (int i = 0; i < 8; i++) {
+            secondRow[i] = board.getPawn(1, i);
+        }
+
+        String second = Arrays.stream(secondRow).map(Pawn::toString).collect(Collectors.joining());
+        assertEquals("WWWWWWWW", second);
+
+        Pawn[] seventhRow = new Pawn[8];
+        for (int i = 0; i < 8; i++) {
+            seventhRow[i] = board.getPawn(6, i);
+        }
+        String seven = Arrays.stream(seventhRow).map(Pawn::toString).collect(Collectors.joining());
+        assertEquals("BBBBBBBB", seven );
+
     }
-
-    @Test
-    public void test_add_pawn_into_board() throws Exception {
-        assertEquals(0, board.numberOfPawns());
-
-        Pawn pawn_1 = new Pawn(Pawn.WHITE);
-        board.add(pawn_1);
-        assertEquals(1, board.numberOfPawns());
-        assertTrue(board.contains(pawn_1));
-
-        Pawn pawn_2 = new Pawn(Pawn.BLACK);
-        board.add(pawn_2);
-        assertEquals(2, board.numberOfPawns());
-        assertTrue(board.contains(pawn_2));
-    }
-
-
 }
