@@ -27,8 +27,8 @@ public class PawnTest {
 
     @Test
     public void test_print_representation() throws Exception {
-        Pawn black = new Pawn(BLACK, Representation.BLACK);
-        Pawn white = new Pawn(WHITE, Representation.WHITE);
+        Pawn black = new Pawn(BLACK);
+        Pawn white = new Pawn(WHITE);
         assertEquals(black.representation(), Representation.BLACK);
         assertEquals(white.representation(), Representation.WHITE);
 

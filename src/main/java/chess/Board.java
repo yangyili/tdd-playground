@@ -15,9 +15,8 @@ public class Board {
     private void initialize() {
 
         for (int column = 0; column < 8; column++) {
-            pawns[1][column] = new Pawn(Pawn.WHITE, Pawn.Representation.WHITE); /* 第 2 行 */
-            pawns[6][column] = new Pawn(Pawn.BLACK, Pawn.Representation.BLACK); /* 第 7 行 */
-
+            add(new Pawn(Pawn.WHITE), 1, column); /* 第 2 行 */
+            add(new Pawn(Pawn.BLACK), 6, column); /* 第 7 行 */
         }
     }
 
