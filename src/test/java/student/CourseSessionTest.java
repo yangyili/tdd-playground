@@ -3,8 +3,6 @@ package student;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.List;
-
 import static org.junit.Assert.assertEquals;
 
 /**
@@ -34,18 +32,12 @@ public class CourseSessionTest {
         Student student_1 = new Student("student_1");
         english.enroll(student_1);
         assertEquals(1, english.getNumberOfStudents());
-
-        List allStudents = english.getAllStudents();
-        assertEquals(1, allStudents.size());
-        assertEquals(student_1, allStudents.get(0));
+        assertEquals(student_1, english.get(0));
 
         Student student_2 = new Student("student_2");
         english.enroll(student_2);
         assertEquals(2, english.getNumberOfStudents());
-
-        assertEquals(2, allStudents.size());
-        assertEquals(student_2, allStudents.get(1));
-
+        assertEquals(student_2, english.get(1));
     }
 }
 
