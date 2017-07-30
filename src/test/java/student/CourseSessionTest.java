@@ -72,7 +72,13 @@ public class CourseSessionTest {
         english.enroll(new Student("A"));
         english.enroll(new Student("B"));
         String rosterReport = english.getRosterReport();
-        assertEquals(CourseSession.ROSTER_REPORT_HEADER + "A\nB\n" + CourseSession.ROSTER_REPORT_FOOTER + "2\n", rosterReport);
+
+        assertEquals(CourseSession.ROSTER_REPORT_HEADER
+                        + "A" + CourseSession.NEWLINE
+                        + "B" + CourseSession.NEWLINE
+                        + CourseSession.ROSTER_REPORT_FOOTER
+                        + "2" + CourseSession.NEWLINE,
+                rosterReport);
     }
 }
 

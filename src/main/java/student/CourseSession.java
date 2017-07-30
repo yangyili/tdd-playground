@@ -8,6 +8,7 @@ import java.util.*;
 public class CourseSession {
     public static final String ROSTER_REPORT_HEADER = "header";
     public static final String ROSTER_REPORT_FOOTER = "footer";
+    public static final String NEWLINE = System.getProperty("line.separator");
     private Date startDate;
     private String department;
     private String number;
@@ -55,8 +56,8 @@ public class CourseSession {
     public String getRosterReport() {
         StringBuilder builder = new StringBuilder();
         builder.append(ROSTER_REPORT_HEADER);
-        students.forEach(student -> builder.append(student.getName()).append("\n"));
-        builder.append(ROSTER_REPORT_FOOTER).append(students.size()).append("\n");
+        students.forEach(student -> builder.append(student.getName()).append(NEWLINE));
+        builder.append(ROSTER_REPORT_FOOTER).append(students.size()).append(NEWLINE);
         return builder.toString();
     }
 }
