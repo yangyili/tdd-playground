@@ -42,7 +42,10 @@ public class CourseSession {
     public Date getEndDate() {
         GregorianCalendar calendar = new GregorianCalendar();
         calendar.setTime(startDate);
-        int numberOfDays = 16 * 7 - 3;
+        final int sessionLength = 16;
+        final int daysInWeek = 7;
+        final int daysFromFridayToMonday = 3;
+        int numberOfDays = sessionLength * daysInWeek - daysFromFridayToMonday;
         calendar.add(Calendar.DAY_OF_YEAR, numberOfDays);
         return calendar.getTime();
     }
