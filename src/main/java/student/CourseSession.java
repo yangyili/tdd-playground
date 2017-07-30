@@ -55,8 +55,8 @@ public class CourseSession {
     public String getRosterReport() {
         StringBuilder builder = new StringBuilder();
         builder.append(ROSTER_REPORT_HEADER);
-        students.stream().forEach(student -> builder.append(student.getName() + "\n"));
-        builder.append(ROSTER_REPORT_FOOTER + students.size() + "\n");
+        students.forEach(student -> builder.append(student.getName()).append("\n"));
+        builder.append(ROSTER_REPORT_FOOTER).append(students.size()).append("\n");
         return builder.toString();
     }
 }
