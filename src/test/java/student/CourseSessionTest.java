@@ -66,5 +66,13 @@ public class CourseSessionTest {
         calendar.set(Calendar.DAY_OF_MONTH, day);
         return calendar.getTime();
     }
+
+    @Test
+    public void test_roster_report() throws Exception {
+        english.enroll(new Student("A"));
+        english.enroll(new Student("B"));
+        String rosterReport = english.getRosterReport();
+        assertEquals(CourseSession.ROSTER_REPORT_HEADER + "A\nB\n" + CourseSession.ROSTER_REPORT_FOOTER + "2\n", rosterReport);
+    }
 }
 

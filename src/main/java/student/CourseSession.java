@@ -6,6 +6,8 @@ import java.util.*;
  * Created by afaren on 4/6/17.
  */
 public class CourseSession {
+    public static final String ROSTER_REPORT_HEADER = "header";
+    public static final String ROSTER_REPORT_FOOTER = "footer";
     private Date startDate;
     private String department;
     private String number;
@@ -48,5 +50,13 @@ public class CourseSession {
         int numberOfDays = sessionLength * daysInWeek - daysFromFridayToMonday;
         calendar.add(Calendar.DAY_OF_YEAR, numberOfDays);
         return calendar.getTime();
+    }
+
+    public String getRosterReport() {
+        StringBuilder builder = new StringBuilder();
+        builder.append(ROSTER_REPORT_HEADER);
+        students.stream().forEach(student -> builder.append(student.getName() + "\n"));
+        builder.append(ROSTER_REPORT_FOOTER + students.size() + "\n");
+        return builder.toString();
     }
 }
