@@ -5,9 +5,15 @@ package pawn;
  */
 public class Pawn {
     private String color;
+    static final String WHITE = "White";
+    static final String BLACK = "Black";
 
     public Pawn(String color) {
         this.color = color;
+    }
+
+    public Pawn() {
+        this.color = WHITE;
     }
 
     public String getColor() {

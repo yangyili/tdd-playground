@@ -3,6 +3,8 @@ package pawn;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static pawn.Pawn.BLACK;
+import static pawn.Pawn.WHITE;
 
 
 /**
@@ -11,12 +13,16 @@ import static org.junit.Assert.assertEquals;
 public class PawnTest {
     @Test
     public void test_create() throws Exception {
-        final String WHITE = "White";
         Pawn whitePawn = new Pawn(WHITE);
         assertEquals(WHITE, whitePawn.getColor());
 
-        final String BLACK = "Black";
         Pawn blackPawn = new Pawn(BLACK);
         assertEquals(BLACK, blackPawn.getColor());
+    }
+
+    @Test
+    public void test_create_default_color_pawn() throws Exception {
+        Pawn pawn = new Pawn();
+        assertEquals(WHITE, pawn.getColor());
     }
 }
