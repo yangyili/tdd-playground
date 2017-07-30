@@ -1,12 +1,30 @@
 package pawn;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by afaren on 7/30/17.
  */
 public class Board {
 
-    public int numberOfPawns() {
+    private List<Pawn> pawns;
 
-        return  0;
+    public Board() {
+        pawns = new ArrayList<>();
+    }
+
+    public int numberOfPawns() {
+        return pawns.size();
+
+    }
+
+    public void add(Pawn pawn) {
+        pawns.add(pawn);
+    }
+
+    public boolean contains(Pawn pawn) {
+
+        return pawns.contains(pawn);
     }
 }
