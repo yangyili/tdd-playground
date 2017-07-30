@@ -23,21 +23,16 @@ public class BoardTest {
     @Test
     public void test_initialization() throws Exception {
         assertEquals(16, board.numberOfPawns());
+        assertRow(1, "WWWWWWWW");
+        assertRow(6, "BBBBBBBB");
+    }
 
-        Pawn[] secondRow = new Pawn[8];
+    private void assertRow(int row, String expected) {
+        Pawn[] pawns = new Pawn[8];
         for (int i = 0; i < 8; i++) {
-            secondRow[i] = board.getPawn(1, i);
+            pawns[i] = board.getPawn(row, i);
         }
-
-        String second = Arrays.stream(secondRow).map(Pawn::toString).collect(Collectors.joining());
-        assertEquals("WWWWWWWW", second);
-
-        Pawn[] seventhRow = new Pawn[8];
-        for (int i = 0; i < 8; i++) {
-            seventhRow[i] = board.getPawn(6, i);
-        }
-        String seven = Arrays.stream(seventhRow).map(Pawn::toString).collect(Collectors.joining());
-        assertEquals("BBBBBBBB", seven );
-
+        String actual = Arrays.stream(pawns).map(Pawn::toString).collect(Collectors.joining());
+        assertEquals(expected, actual);
     }
 }
