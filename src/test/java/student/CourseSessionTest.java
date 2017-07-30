@@ -1,5 +1,6 @@
 package student;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import java.util.List;
@@ -10,9 +11,15 @@ import static org.junit.Assert.assertEquals;
  * Created by afaren on 4/6/17.
  */
 public class CourseSessionTest {
+    private CourseSession english;
+
+    @Before
+    public void setUp() throws Exception {
+        english = new CourseSession("ENGLISH", "101");
+    }
+
     @Test
     public void test_create() throws Exception {
-        CourseSession english = new CourseSession("ENGLISH", "101");
         assertEquals("ENGLISH", english.getDepartment());
         assertEquals("101", english.getNumber());
 
@@ -22,8 +29,6 @@ public class CourseSessionTest {
 
     @Test
     public void test_enroll_students() throws Exception {
-        CourseSession english = new CourseSession("ENGLISH", "101");
-
         assertEquals(0, english.getNumberOfStudents());
 
         Student student_1 = new Student("student_1");
@@ -33,7 +38,6 @@ public class CourseSessionTest {
         List allStudents = english.getAllStudents();
         assertEquals(1, allStudents.size());
         assertEquals(student_1, allStudents.get(0));
-
 
         Student student_2 = new Student("student_2");
         english.enroll(student_2);
