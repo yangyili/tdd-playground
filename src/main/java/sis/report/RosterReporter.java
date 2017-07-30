@@ -1,6 +1,6 @@
-package student;
+package sis.report;
 
-import java.util.List;
+import sis.student.CourseSession;
 
 /**
  * Created by afaren on 7/30/17.

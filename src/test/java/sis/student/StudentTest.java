@@ -1,7 +1,6 @@
-package student;
+package sis.student;
 
 import org.junit.Test;
-import student.Student;
 
 import static org.junit.Assert.*;
 

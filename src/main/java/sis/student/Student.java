@@ -1,4 +1,4 @@
-package student;
+package sis.student;
 
 /**
  * Created by afaren on 3/24/17.

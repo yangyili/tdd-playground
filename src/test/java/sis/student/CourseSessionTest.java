@@ -1,4 +1,4 @@
-package student;
+package sis.student;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -6,7 +6,7 @@ import org.junit.Test;
 import java.util.Date;
 
 import static org.junit.Assert.assertEquals;
-import static student.DateUtil.createDate;
+import static sis.util.DateUtil.createDate;
 
 /**
  * Created by afaren on 4/6/17.

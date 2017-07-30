@@ -1,4 +1,4 @@
-package student;
+package sis.student;
 
 import java.util.*;
 

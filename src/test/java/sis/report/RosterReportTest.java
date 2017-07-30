@@ -1,9 +1,11 @@
-package student;
+package sis.report;
 
 import org.junit.Test;
+import sis.student.CourseSession;
+import sis.student.Student;
 
 import static org.junit.Assert.assertEquals;
-import static student.DateUtil.createDate;
+import static sis.util.DateUtil.createDate;
 
 /**
  * Created by afaren on 7/30/17.
