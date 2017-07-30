@@ -1,4 +1,4 @@
-package pawn;
+package chess;
 
 /**
  * Created by afaren on 4/6/17.

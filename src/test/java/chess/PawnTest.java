@@ -1,10 +1,10 @@
-package pawn;
+package chess;
 
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
-import static pawn.Pawn.BLACK;
-import static pawn.Pawn.WHITE;
+import static chess.Pawn.BLACK;
+import static chess.Pawn.WHITE;
 
 
 /**
