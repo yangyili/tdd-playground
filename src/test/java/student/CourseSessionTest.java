@@ -18,7 +18,7 @@ public class CourseSessionTest {
         int year = 103;
         int month = 0;
         int day = 6;
-        Date startDate = new Date(year, month, day);
+        Date startDate = createDate(year, month, day);
 
         english = new CourseSession("ENGLISH", "101", startDate);
     }
@@ -52,8 +52,12 @@ public class CourseSessionTest {
         int year = 103;
         int month = 3;
         int day = 25;
-        Date sixteenWeeksOut = new Date(year, month, day);
+        Date sixteenWeeksOut = createDate(year, month, day);
         assertEquals(sixteenWeeksOut, english.getEndDate());
+    }
+
+    private Date createDate(int year, int month, int day) {
+        return new Date(year - 1900, month - 1, day);
     }
 }
 
