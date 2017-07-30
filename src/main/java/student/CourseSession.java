@@ -9,18 +9,13 @@ public class CourseSession {
     private Date startDate;
     private String department;
     private String number;
-
     private List<Student> students;
 
-    public CourseSession(String department, String number) {
-        this.department = department;
-        this.number = number;
-        students = new ArrayList<Student>();
-
-    }
 
     public CourseSession(String department, String number, Date startDate) {
-        this(department, number);
+        this.students = new ArrayList();
+        this.department = department;
+        this.number = number;
         this.startDate = startDate;
     }
 

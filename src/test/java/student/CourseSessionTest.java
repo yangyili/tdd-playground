@@ -15,7 +15,12 @@ public class CourseSessionTest {
 
     @Before
     public void setUp() throws Exception {
-        english = new CourseSession("ENGLISH", "101");
+        int year = 103;
+        int month = 0;
+        int day = 6;
+        Date startDate = new Date(year, month, day);
+
+        english = new CourseSession("ENGLISH", "101", startDate);
     }
 
     @Test
@@ -45,17 +50,10 @@ public class CourseSessionTest {
     @Test
     public void test_course_dates() throws Exception {
         int year = 103;
-        int month = 0;
-        int day = 6;
-
-        Date startDate = new Date(year, month, day);
-        CourseSession abcd = new CourseSession("ABCD", "200", startDate);
-
-        year = 103;
-        month = 3;
-        day = 25;
+        int month = 3;
+        int day = 25;
         Date sixteenWeeksOut = new Date(year, month, day);
-        assertEquals(sixteenWeeksOut, abcd.getEndDate());
+        assertEquals(sixteenWeeksOut, english.getEndDate());
     }
 }
 
