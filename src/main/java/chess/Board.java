@@ -1,5 +1,7 @@
 package chess;
 
+import java.util.Arrays;
+
 /**
  * Created by afaren on 7/30/17.
  */
@@ -49,5 +51,19 @@ public class Board {
 
     public Pawn getPawn(int row, int column) {
         return pawns[row][column];
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder board = new StringBuilder();
+
+        for (int i = 0; i < 8; i++) {
+            for (int j = 0; j < 8; j++) {
+                board.append(pawns[i][j] == null ? '.' : pawns[i][j]);
+            }
+            board.append('\n');
+        }
+
+        return board.toString();
     }
 }

@@ -25,6 +25,15 @@ public class BoardTest {
         assertEquals(16, board.numberOfPawns());
         assertRow(1, "WWWWWWWW");
         assertRow(6, "BBBBBBBB");
+        assertEquals( "........\n"
+                    + "WWWWWWWW\n"
+                    + "........\n"
+                    + "........\n"
+                    + "........\n"
+                    + "........\n"
+                    + "BBBBBBBB\n"
+                    + "........\n",
+                board.toString());
     }
 
     private void assertRow(int row, String expected) {
