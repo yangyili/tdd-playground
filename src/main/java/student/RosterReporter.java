@@ -18,11 +18,25 @@ public class RosterReporter {
 
     public String getReport() {
         StringBuilder report = new StringBuilder();
-        report.append(ROSTER_REPORT_HEADER);
-        List<Student> students = session.getAllStudents();
-        students.forEach(student -> report.append(student.getName()).append(NEWLINE));
-        report.append(ROSTER_REPORT_FOOTER).append(students.size()).append(NEWLINE);
+        writeHeader(report);
+        writeBody(report);
+        writeFooter(report);
         return report.toString();
 
+    }
+
+    private void writeHeader(StringBuilder report) {
+        report.append(ROSTER_REPORT_HEADER);
+    }
+
+    private void writeBody(StringBuilder report) {
+        session.getAllStudents()
+               .forEach(student -> report.append(student.getName()).append(NEWLINE));
+    }
+
+    private void writeFooter(StringBuilder report) {
+        report.append(ROSTER_REPORT_FOOTER)
+              .append(session.getAllStudents().size())
+              .append(NEWLINE);
     }
 }
