@@ -57,13 +57,11 @@ public class Board {
     public String toString() {
         StringBuilder board = new StringBuilder();
 
-        for (int i = 0; i < 8; i++) {
-            for (int j = 0; j < 8; j++) {
-                board.append(pawns[i][j] == null ? '.' : pawns[i][j]);
-            }
+        Arrays.stream(pawns).forEach(row -> {
+            Arrays.stream(row).forEach(pawn -> board.append(pawn == null ? '.' : pawn));
             board.append('\n');
-        }
-
+        });
+        
         return board.toString();
     }
 }
