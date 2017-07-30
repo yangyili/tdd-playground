@@ -3,6 +3,8 @@ package student;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.Date;
+
 import static org.junit.Assert.assertEquals;
 
 /**
@@ -38,6 +40,22 @@ public class CourseSessionTest {
         english.enroll(student_2);
         assertEquals(2, english.getNumberOfStudents());
         assertEquals(student_2, english.get(1));
+    }
+
+    @Test
+    public void test_course_dates() throws Exception {
+        int year = 103;
+        int month = 0;
+        int day = 6;
+
+        Date startDate = new Date(year, month, day);
+        CourseSession abcd = new CourseSession("ABCD", "200", startDate);
+
+        year = 103;
+        month = 3;
+        day = 25;
+        Date sixteenWeeksOut = new Date(year, month, day);
+        assertEquals(sixteenWeeksOut, abcd.getEndDate());
     }
 }
 
