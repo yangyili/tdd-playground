@@ -3,7 +3,9 @@ package student;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 
 import static org.junit.Assert.assertEquals;
 
@@ -16,7 +18,7 @@ public class CourseSessionTest {
     @Before
     public void setUp() throws Exception {
         int year = 103;
-        int month = 0;
+        int month = 1;
         int day = 6;
         Date startDate = createDate(year, month, day);
 
@@ -50,14 +52,19 @@ public class CourseSessionTest {
     @Test
     public void test_course_dates() throws Exception {
         int year = 103;
-        int month = 3;
+        int month = 4;
         int day = 25;
         Date sixteenWeeksOut = createDate(year, month, day);
         assertEquals(sixteenWeeksOut, english.getEndDate());
     }
 
     private Date createDate(int year, int month, int day) {
-        return new Date(year - 1900, month - 1, day);
+        GregorianCalendar calendar = new GregorianCalendar();
+        calendar.clear();
+        calendar.set(Calendar.YEAR, year);
+        calendar.set(Calendar.MONTH, month - 1);
+        calendar.set(Calendar.DAY_OF_MONTH, day);
+        return calendar.getTime();
     }
 }
 
