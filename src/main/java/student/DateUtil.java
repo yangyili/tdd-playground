@@ -1,0 +1,19 @@
+package student;
+
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
+
+/**
+ * Created by afaren on 7/30/17.
+ */
+public class DateUtil {
+    public static Date createDate(int year, int month, int day) {
+        GregorianCalendar calendar = new GregorianCalendar();
+        calendar.clear();
+        calendar.set(Calendar.YEAR, year);
+        calendar.set(Calendar.MONTH, month - 1);
+        calendar.set(Calendar.DAY_OF_MONTH, day);
+        return calendar.getTime();
+    }
+}

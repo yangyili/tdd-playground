@@ -3,11 +3,10 @@ package student;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.Calendar;
 import java.util.Date;
-import java.util.GregorianCalendar;
 
 import static org.junit.Assert.assertEquals;
+import static student.DateUtil.createDate;
 
 /**
  * Created by afaren on 4/6/17.
@@ -58,13 +57,5 @@ public class CourseSessionTest {
         assertEquals(sixteenWeeksOut, english.getEndDate());
     }
 
-    private Date createDate(int year, int month, int day) {
-        GregorianCalendar calendar = new GregorianCalendar();
-        calendar.clear();
-        calendar.set(Calendar.YEAR, year);
-        calendar.set(Calendar.MONTH, month - 1);
-        calendar.set(Calendar.DAY_OF_MONTH, day);
-        return calendar.getTime();
-    }
 }
 
