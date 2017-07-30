@@ -38,6 +38,7 @@ public class BoardTest {
 
     private void assertRow(int row, String expected) {
         Pawn[] pawns = new Pawn[8];
+
         for (int i = 0; i < 8; i++) {
             pawns[i] = board.getPawn(row, i);
         }

@@ -24,9 +24,9 @@ public class Board {
 
     public int numberOfPawns() {
         int count = 0;
-        for (int i = 0; i < 8; i++) {
-            for (int j = 0; j < 8; j++) {
-                if (pawns[i][j] != null) {
+        for (Pawn[] row : pawns) {
+            for (Pawn pawn : row) {
+                if (pawn != null) {
                     count++;
                 }
             }
@@ -39,13 +39,14 @@ public class Board {
     }
 
     public boolean contains(Pawn pawn) {
-        for (int i = 0; i < 8; i++) {
-            for (int j = 0; j < 8; j++) {
-                if (pawns[i][j].equals(pawn)) {
+        for (Pawn[] row : pawns) {
+            for (Pawn item : row) {
+                if (item.equals(pawn)) {
                     return true;
                 }
             }
         }
+
         return false;
     }
 
@@ -61,7 +62,7 @@ public class Board {
             Arrays.stream(row).forEach(pawn -> board.append(pawn == null ? '.' : pawn));
             board.append('\n');
         });
-        
+
         return board.toString();
     }
 }
