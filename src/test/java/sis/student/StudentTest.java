@@ -21,4 +21,16 @@ public class StudentTest {
         assertEquals(firstStudentName, student.getName());
 
     }
+
+    @Test
+    public void test_student_status() throws Exception {
+        Student student = new Student("a");
+        assertEquals(0, student.getCredits());
+        assertFalse(student.isFullTime());
+
+        student.addCredits(12);
+        assertEquals(12, student.getCredits());
+        assertTrue(student.isFullTime());
+    }
+    
 }
