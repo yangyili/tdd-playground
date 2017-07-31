@@ -15,7 +15,7 @@ public class RosterReportTest {
 
     @Test
     public void test_roster_report() throws Exception {
-        CourseSession english = new CourseSession("English", "111", createDate(2003, 1, 6));
+        CourseSession english = CourseSession.create("English", "111", createDate(2003, 1, 6));
         english.enroll(new Student("A"));
         english.enroll(new Student("B"));
         String rosterReport = new RosterReporter(english).getReport();

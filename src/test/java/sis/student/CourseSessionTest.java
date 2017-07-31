@@ -23,7 +23,7 @@ public class CourseSessionTest {
 
         startDate = createDate(year, month, day);
 
-        english = new CourseSession("ENGLISH", "101", startDate);
+        english = CourseSession.create("ENGLISH", "101", startDate);
     }
 
     @Test
@@ -71,7 +71,7 @@ public class CourseSessionTest {
     }
 
     private void createCourseSession() {
-        new CourseSession("for count test", "1111", startDate);
+        CourseSession.create("for count test", "1111", startDate);
     }
 }
 
