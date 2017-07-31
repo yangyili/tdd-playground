@@ -13,13 +13,15 @@ import static sis.util.DateUtil.createDate;
  */
 public class CourseSessionTest {
     private CourseSession english;
+    private Date startDate;
 
     @Before
     public void setUp() throws Exception {
         int year = 103;
         int month = 1;
         int day = 6;
-        Date startDate = createDate(year, month, day);
+
+        startDate = createDate(year, month, day);
 
         english = new CourseSession("ENGLISH", "101", startDate);
     }
@@ -57,5 +59,19 @@ public class CourseSessionTest {
         assertEquals(sixteenWeeksOut, english.getEndDate());
     }
 
+    @Test
+    public void test_count() throws Exception {
+        CourseSession.count = 0;
+        createCourseSession();
+        assertEquals(1, CourseSession.count);
+        createCourseSession();
+        assertEquals(2, CourseSession.count);
+
+
+    }
+
+    private void createCourseSession() {
+        new CourseSession("for count test", "1111", startDate);
+    }
 }
 

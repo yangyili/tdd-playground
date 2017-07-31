@@ -6,6 +6,7 @@ import java.util.*;
  * Created by afaren on 4/6/17.
  */
 public class CourseSession {
+    public static int count;
     private Date startDate;
     private String department;
     private String number;
@@ -17,6 +18,7 @@ public class CourseSession {
         this.department = department;
         this.number = number;
         this.startDate = startDate;
+        CourseSession.count = CourseSession.count + 1;
     }
 
     public String getDepartment() {
