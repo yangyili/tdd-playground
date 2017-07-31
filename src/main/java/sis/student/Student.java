@@ -8,6 +8,7 @@ public class Student {
 
     private String name;
     private int credits;
+    private static final int CREDITS_REQUEST_FOR_FULL_TIME = 12;
 
     public Student(String name) {
         this.name = name;
@@ -20,7 +21,7 @@ public class Student {
     }
 
     public boolean isFullTime() {
-        return credits >= 12;
+        return credits >= CREDITS_REQUEST_FOR_FULL_TIME;
     }
 
     public int getCredits() {
