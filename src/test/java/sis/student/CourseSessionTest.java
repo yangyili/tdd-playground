@@ -14,6 +14,7 @@ import static sis.util.DateUtil.createDate;
 public class CourseSessionTest {
     private CourseSession english;
     private Date startDate;
+    private static int CREDITS = 3;
 
     @Before
     public void setUp() throws Exception {
@@ -24,6 +25,7 @@ public class CourseSessionTest {
         startDate = createDate(year, month, day);
 
         english = CourseSession.create("ENGLISH", "101", startDate);
+        english.setNumberOfCredits(CourseSessionTest.CREDITS);
     }
 
     @Test
@@ -41,11 +43,13 @@ public class CourseSessionTest {
 
         Student student_1 = new Student("student_1");
         english.enroll(student_1);
+        assertEquals(CREDITS, student_1.getCredits());
         assertEquals(1, english.getNumberOfStudents());
         assertEquals(student_1, english.get(0));
 
         Student student_2 = new Student("student_2");
         english.enroll(student_2);
+        assertEquals(CREDITS, student_2.getCredits());
         assertEquals(2, english.getNumberOfStudents());
         assertEquals(student_2, english.get(1));
     }

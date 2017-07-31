@@ -11,6 +11,7 @@ public class CourseSession {
     private String department;
     private String number;
     private List<Student> students;
+    private int numberOfCredits;
 
 
     private CourseSession(String department, String number, Date startDate) {
@@ -46,6 +47,7 @@ public class CourseSession {
     }
 
     public void enroll(Student student) {
+        student.addCredits(numberOfCredits);
         students.add(student);
     }
 
@@ -70,5 +72,9 @@ public class CourseSession {
 
     public static void resetCount() {
         CourseSession.count = 0;
+    }
+
+    public void setNumberOfCredits(int numberOfCredits) {
+        this.numberOfCredits = numberOfCredits;
     }
 }
