@@ -39,6 +39,13 @@ public class StudentTest {
         assertFalse(student.isInState());
         student.setState(Student.IN_STATE);
         assertTrue(student.isInState());
+    }
 
+    @Test
+    public void test_instate_ignore_case() throws Exception {
+        Student student = new Student("a");
+        assertFalse(student.isInState());
+        student.setState(Student.IN_STATE.toLowerCase());
+        assertTrue(student.isInState());
     }
 }

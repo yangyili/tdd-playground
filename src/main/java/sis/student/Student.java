@@ -35,7 +35,7 @@ public class Student {
     }
 
     public boolean isInState() {
-        return state != null && state.equals(Student.IN_STATE);
+        return state != null && state.equalsIgnoreCase(Student.IN_STATE);
     }
 
     public void setState(String state) {
