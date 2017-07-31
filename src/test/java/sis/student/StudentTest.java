@@ -29,7 +29,7 @@ public class StudentTest {
         assertFalse("No enough credits for full time status", student.isFullTime());
 
         student.addCredits(12);
-        assertEquals(12, student.getCredits());
+        assertEquals(Student.CREDITS_REQUEST_FOR_FULL_TIME, student.getCredits());
         assertTrue("12 is the minume credits for full time status", student.isFullTime());
     }
 

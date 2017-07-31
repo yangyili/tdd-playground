@@ -8,7 +8,7 @@ public class Student {
 
     private String name;
     private int credits;
-    private static final int CREDITS_REQUEST_FOR_FULL_TIME = 12;
+    public static final int CREDITS_REQUEST_FOR_FULL_TIME = 12;
 
     public Student(String name) {
         this.name = name;
