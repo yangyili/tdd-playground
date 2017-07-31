@@ -18,11 +18,15 @@ public class CourseSession {
         this.department = department;
         this.number = number;
         this.startDate = startDate;
-        CourseSession.count = CourseSession.count + 1;
+        CourseSession.incrementCount();
+    }
+
+    private static void incrementCount() {
+        CourseSession.count++;
     }
 
     public static int getCount() {
-        return count;
+        return CourseSession.count;
     }
 
     public String getDepartment() {
