@@ -33,4 +33,12 @@ public class StudentTest {
         assertTrue("12 is the minume credits for full time status", student.isFullTime());
     }
 
+    @Test
+    public void test_in_state() throws Exception {
+        Student student = new Student("a");
+        assertFalse(student.isInState());
+        student.setState(Student.IN_STATE);
+        assertTrue(student.isInState());
+
+    }
 }
