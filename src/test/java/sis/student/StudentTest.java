@@ -26,11 +26,11 @@ public class StudentTest {
     public void test_student_status() throws Exception {
         Student student = new Student("a");
         assertEquals(0, student.getCredits());
-        assertFalse(student.isFullTime());
+        assertFalse("No enough credits for full time status", student.isFullTime());
 
         student.addCredits(12);
         assertEquals(12, student.getCredits());
-        assertTrue(student.isFullTime());
+        assertTrue("12 is the minume credits for full time status", student.isFullTime());
     }
-    
+
 }
